@@ -1,0 +1,97 @@
+﻿<Window x:Class="PPC_HR.Views.MainScreenView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:controls="clr-namespace:PPC_HR.Views"
+        xmlns:uc="clr-namespace:PPC_HR.Views"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PPC_HR.Views"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="MainWindow" Height="720" Width="1280">
+    <Window.Resources>
+        <Storyboard x:Key="ReportsCanvasStory">
+            <ColorAnimationUsingKeyFrames Storyboard.TargetName="ReportsCanvas" Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)">
+                <EasingColorKeyFrame KeyTime="00:00:00" Value="#FF10576F"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.5000000" Value="#FFC8ECFD"/>
+            </ColorAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid x:Name="MainMenuGrid" Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" Background="#FF10576F"  >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="60"/>
+            </Grid.RowDefinitions>
+            <Button Grid.Row="1" Style="{DynamicResource RoundedButtonTemplate}" Content="Пошук" Click="searchButton_Click"/>
+            <Button Grid.Row="2" Style="{DynamicResource RoundedButtonTemplate}" Content="Працівники" Click="employeesButton_Click"/>
+            <Button Grid.Row="3" Style="{DynamicResource RoundedButtonTemplate}" Content="Нагадування"/>
+            <Button Grid.Row="4" Style="{DynamicResource RoundedButtonTemplate}" Content="Накази"/>
+            <Button Grid.Row="5" x:Name="ReportsButton"  Style="{DynamicResource RoundedButtonTemplate}" Content="Звіти" Click="reportsButton_Click">
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="Button.Click" >
+                        <BeginStoryboard  Storyboard="{StaticResource ReportsCanvasStory}">
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
+            <Canvas x:Name="ReportsCanvas" Grid.Row="6"  Background="#FF10576F" HorizontalAlignment="Left" VerticalAlignment="Top" Height="120" Width="250" Visibility="Hidden">
+                <Grid Margin="5,0,5,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                    </Grid.RowDefinitions>
+                    <Button Grid.Row="1" Style="{DynamicResource RoundedButtonTemplate}" Content="Звіт з інвал" Click="disabledEmplButton_Click"/>
+                    <Button Grid.Row="0" Style="{DynamicResource RoundedButtonTemplate}" Content="Військовозобов'язані" Click="militaryLiableButton_Click" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Grid>
+            </Canvas>
+            <Button Grid.Row="7" Style="{DynamicResource RoundedButtonTemplate}" Content="Налаштування"/>
+        </Grid>
+        <TabControl Grid.Row="0" Grid.Column="1" Grid.RowSpan="3" TabStripPlacement="Bottom" VerticalAlignment="Stretch"  BorderThickness="0" Background="#FFC8ECFD">
+            <TabItem Header="first Tab" Visibility="Collapsed" Margin="2,2,2,2"  >
+                <ScrollViewer>
+                    <StackPanel x:Name="WorkspacePanel">
+                        
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+        </TabControl>
+        <StackPanel x:Name="searchPanel" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Hidden">
+        <Border  CornerRadius="15">
+            <Grid VerticalAlignment="Center" >
+                <Border Name="mask" Background="#FF0077CC" CornerRadius="15" Height="30" Width="550"/>
+                <StackPanel Grid.Column ="1" Grid.Row="0" 
+                    Width="550"
+                    Height="40"
+                    Background="White">
+                    <StackPanel.OpacityMask>
+                        <VisualBrush Visual="{Binding ElementName=mask}"/>
+                    </StackPanel.OpacityMask>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="450"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBox Grid.Column="0" Width="430" Height="35" BorderThickness="0" FontSize="24" Text="Search query" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,5,0,0"></TextBox>
+                        <Button Grid.Column="1" Style="{DynamicResource SearchButtonTemplate}" Background="#FF10576F" >Пошук</Button>
+                    </Grid>
+                </StackPanel>
+            </Grid>
+        </Border>
+        </StackPanel>
+    </Grid>
+</Window>

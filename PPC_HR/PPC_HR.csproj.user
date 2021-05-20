@@ -7,7 +7,39 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="MainWindow.xaml">
+    <Compile Update="Authorization.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\DisabledEmployeesReportView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\MainScreenView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\PersonInfoView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\PersonPreviewView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Authorization.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Dictionary.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\DisabledEmployeesReportView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\MainScreenView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\PersonInfoView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\PersonPreviewView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

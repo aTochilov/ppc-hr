@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="PPC_HR.Views.DisabledEmployeesReportView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PPC_HR.Views"
+             mc:Ignorable="d">
+    <Grid>
+        <DataGrid x:Name="GridReport" AutoGenerateColumns="False" >
+            <DataGrid.Resources>
+                <Style x:Key="wordWrapStyle" TargetType="{x:Type TextBlock}">
+                    <Setter Property="TextWrapping" Value="Wrap"/>
+                    <Setter Property="FontFamily" Value="Segoe UI"/>
+                    <Setter Property="FontSize" Value="16"/>
+                </Style>
+            </DataGrid.Resources>
+            <DataGridColumnHeader Style="{DynamicResource datagridHeaderTemplate}"/>
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding idx}" Width="35" Header="№&#10;п/п"/>
+                <DataGridTextColumn Binding="{Binding personInfo}" Width="200" ElementStyle="{StaticResource wordWrapStyle}" Header="Прізвище, ім'я, по-батькові, рік народження, ідентифікаційний номер"/>
+                <DataGridTextColumn Binding="{Binding msecInfo}" Width="150" ElementStyle="{StaticResource wordWrapStyle}" Header="Номер довідки МСЕК та дата її видачі (вперше або вдруге)"/>
+                <DataGridTextColumn Binding="{Binding group}" Width="50" Header="Група&#10;інвалід&#10;ності" />
+                <DataGridTextColumn Binding="{Binding dateFrom}" Width="*" ElementStyle="{StaticResource wordWrapStyle}" Header="Інвалідність від" />
+                <DataGridTextColumn Binding="{Binding dateTo}" Width="*" ElementStyle="{StaticResource wordWrapStyle}" Header="Інвалідність до" />
+                <DataGridTextColumn Binding="{Binding address}" Width="*" ElementStyle="{StaticResource wordWrapStyle}" Header="Домашня адреса" />
+                <DataGridTextColumn Binding="{Binding monthInWork}" Width="*" Header="Відпрацював повних місяців" />
+                <DataGridTextColumn Binding="{Binding position}" Width="*" ElementStyle="{StaticResource wordWrapStyle}" Header="Посада" />
+                <DataGridTextColumn Binding="{Binding orderHired}" Width="*" ElementStyle="{StaticResource wordWrapStyle}" Header="№ та дата наказу про прийняття на роботу" />
+                <DataGridTextColumn Binding="{Binding orderFired}" Width="*" ElementStyle="{StaticResource wordWrapStyle}" Header="№ та дата наказу про звільнення з роботи" />
+            </DataGrid.Columns>
+
+        </DataGrid>
+    </Grid>
+</UserControl>

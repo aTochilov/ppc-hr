@@ -1,0 +1,54 @@
+﻿<Window x:Class="PPC_HR.Views.PersonInfoView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PPC_HR.Views"
+        mc:Ignorable="d"
+        Title="PersonInfo" Height="775" Width="550" FontFamily="SegoeUI" FontSize="20">
+    <Grid Background="#FFC8ECFD">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="65"/>
+            <RowDefinition Height="65"/>
+            <RowDefinition Height="65"/>
+            <RowDefinition Height="65"/>
+            <RowDefinition Height="65"/>
+            <RowDefinition Height="65"/>
+            <RowDefinition Height="65"/>
+            <RowDefinition Height="65"/>
+        </Grid.RowDefinitions>
+        <Image Grid.Column="0" Grid.Row="0" Grid.RowSpan="3"  Source="/person.png" Margin="50,15,50,5">
+        </Image>
+        <Label Content="LastName" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" Height="34" Margin="0,0,0,0"  VerticalAlignment="Bottom" Width="204"/>
+        <Label Content="FirstName" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" Height="34" Margin="0,0,0,0"  VerticalAlignment="Bottom" Width="204"/>
+        <Label Content="MidName" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" Height="34" Margin="0,0,0,0"  VerticalAlignment="Center" Width="204"/>
+        <Label Content="Телефон:" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Right" Height="34" Margin="0,0,0,0"  VerticalAlignment="Bottom"/>
+        <Label Content="Адреса:" Grid.Column="0" Grid.Row="4" HorizontalAlignment="Right" Height="34" Margin="0,0,0,0"  VerticalAlignment="Bottom" Width="80"/>
+        <Label Content="Дата народження:" Grid.Column="0" Grid.Row="5" HorizontalAlignment="Right" Height="34" Margin="0,0,0,0"  VerticalAlignment="Bottom"/>
+        <Label Content="Циклова комісія:" Grid.Column="0" Grid.Row="6" HorizontalAlignment="Right" Height="34" Margin="0,0,0,0"  VerticalAlignment="Bottom"/>
+        <Label Content="Посада:" Grid.Column="0" Grid.Row="7" HorizontalAlignment="Right" Height="34" Margin="0,0,0,0"  VerticalAlignment="Bottom" Width="82"/>
+        <Label Content="Пед. навантаження:" Grid.Column="0" Grid.Row="8" HorizontalAlignment="Right" Height="34" Margin="0,0,0,0"  VerticalAlignment="Bottom" Width="191"/>
+        <Label Content="Військовозобов'язаний:" Grid.Column="0" Grid.Row="9" HorizontalAlignment="Right" Height="34" Margin="0,0,5,0"  VerticalAlignment="Bottom" Width="228"/>
+        <Label Content="Пенсонер:" Grid.Column="0" Grid.Row="10" HorizontalAlignment="Right" Height="34" Margin="0,0,0,0"  VerticalAlignment="Bottom" Width="106"/>
+
+        <Label Content="+380110001100" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" Height="34" Margin="0,0,0,0"  VerticalAlignment="Bottom" Width="204"/>
+        <Label Content="Адреса" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Left" Height="34" Margin="0,0,0,0"  VerticalAlignment="Bottom" Width="204"/>
+        <DatePicker Grid.Column="1" Grid.Row="5" HorizontalAlignment="Left" Height="34" Margin="0,0,0,0"  VerticalAlignment="Bottom" Width="204"/>
+        <ComboBox SelectedValue="Циклова комісія" Grid.Column="1" Grid.Row="6" HorizontalAlignment="Left" Height="34" Margin="0,0,0,0"  VerticalAlignment="Bottom" Width="204"/>
+        <Label Content="Посада" Grid.Column="1" Grid.Row="7" HorizontalAlignment="Left" Height="34" Margin="0,0,5,0"  VerticalAlignment="Bottom" Width="199"/>
+        <CheckBox Grid.Column="1" Grid.Row="8" HorizontalAlignment="Left" Height="16"  VerticalAlignment="Bottom" Width="199" Margin="0,0,0,10"/>
+        <CheckBox Grid.Column="1" Grid.Row="9" HorizontalAlignment="Left" Height="17"  VerticalAlignment="Bottom" Width="199" Margin="0,0,0,9"/>
+        <CheckBox Grid.Column="1" Grid.Row="10" HorizontalAlignment="Left" Height="26"  VerticalAlignment="Top" Width="199" Margin="0,25,0,0"/>
+        <Path Grid.ColumnSpan="2" Data="M40,192.04 L509.06823,192.04" Fill="#FF10576F" HorizontalAlignment="Center" Height="5" Margin="0,0,0,0" Grid.Row="3" Stretch="Fill" StrokeThickness="5" Stroke="#FF10576F" VerticalAlignment="Top" Width="450"/>
+        <Path Grid.ColumnSpan="2" Data="M40,192.04 L509.06823,192.04" Fill="#FF10576F" HorizontalAlignment="Left" Height="5" Margin="46,2,0,0" Grid.Row="6" Stretch="Fill" StrokeThickness="5" Stroke="#FF10576F" VerticalAlignment="Top" Width="450"/>
+        <Path Grid.ColumnSpan="2" Data="M40,192.04 L509.06823,192.04" Fill="#FF10576F" HorizontalAlignment="Left" Height="5" Margin="57,0,0,0" Grid.Row="9" Stretch="Fill" StrokeThickness="5" Stroke="#FF10576F" VerticalAlignment="Top" Width="450"/>
+
+    </Grid>
+</Window>

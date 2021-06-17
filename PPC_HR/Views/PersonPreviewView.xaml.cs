@@ -24,13 +24,14 @@ namespace PPC_HR.Views
         private readonly IPersonPreviewController _controller;
         private readonly IPersonPreviewModel _model;
 
+        private PersonPreview person;
 
         public PersonPreviewView(IPersonPreviewController previewController, IPersonPreviewModel previewModel)
         {
             InitializeComponent();
             _controller = previewController;
             _model = previewModel;
-            PersonPreview person = _model.GetNextPreview();
+            person = _model.GetNextPreview();
 
             _model.PreviewUpdated += model_PreviewUpdated;
             FullName.Text = person.fullname;
@@ -41,6 +42,18 @@ namespace PPC_HR.Views
         void model_PreviewUpdated(object sender, PersonPreviewEventArgs e)
         {
             throw new NotImplementedException();
+        }
+
+        private void MoreButton_Click(object sender, RoutedEventArgs e)
+        {
+            PersonInfoView personInfo = new PersonInfoView(new PersonInfoModel(person.id), false);
+            personInfo.Show();
+        }
+
+        private void EditablePersonInfo_Click(object sender, RoutedEventArgs e)
+        {
+            PersonInfoView personInfo = new PersonInfoView(new PersonInfoModel(person.id), true);
+            personInfo.Show();
         }
     }
 }

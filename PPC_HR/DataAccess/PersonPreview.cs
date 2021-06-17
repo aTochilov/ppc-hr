@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿
 namespace PPC_HR.DataAccess
 {
     public interface IPersonPreview

@@ -1,6 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup />
+  <PropertyGroup>
+    <_LastSelectedProfileId>C:\Users\andre\Documents\Учеба\Диплом\PPC_HR\PPC_HR\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
+  </PropertyGroup>
   <ItemGroup>
     <ApplicationDefinition Update="App.xaml">
       <SubType>Designer</SubType>
@@ -14,6 +16,12 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\MainScreenView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\MilReportEmployeesView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\OrderView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\PersonInfoView.xaml.cs">
@@ -34,6 +42,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\MainScreenView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\MilReportEmployeesView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\OrderView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\PersonInfoView.xaml">

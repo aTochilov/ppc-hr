@@ -1,0 +1,14 @@
+C:\Users\andre\Documents\Учеба\Диплом\PPC_HR\PPC_HR\bin\Release\netcoreapp3.1\publish\PPC_HR.exe
+C:\Users\andre\Documents\Учеба\Диплом\PPC_HR\PPC_HR\bin\Release\netcoreapp3.1\publish\PPC_HR.dll
+C:\Users\andre\Documents\Учеба\Диплом\PPC_HR\PPC_HR\bin\Release\netcoreapp3.1\publish\PPC_HR.deps.json
+C:\Users\andre\Documents\Учеба\Диплом\PPC_HR\PPC_HR\bin\Release\netcoreapp3.1\publish\PPC_HR.runtimeconfig.json
+C:\Users\andre\Documents\Учеба\Диплом\PPC_HR\PPC_HR\bin\Release\netcoreapp3.1\publish\PPC_HR.dll.config
+C:\Users\andre\Documents\Учеба\Диплом\PPC_HR\PPC_HR\bin\Release\netcoreapp3.1\publish\PPC_HR.pdb
+C:\Users\andre\Documents\Учеба\Диплом\PPC_HR\PPC_HR\bin\Release\netcoreapp3.1\publish\Interop.Microsoft.Office.Interop.Word.dll
+C:\Users\andre\Documents\Учеба\Диплом\PPC_HR\PPC_HR\bin\Release\netcoreapp3.1\publish\linq2db.dll
+C:\Users\andre\Documents\Учеба\Диплом\PPC_HR\PPC_HR\bin\Release\netcoreapp3.1\publish\System.Data.SqlClient.dll
+C:\Users\andre\Documents\Учеба\Диплом\PPC_HR\PPC_HR\bin\Release\netcoreapp3.1\publish\runtimes\win-arm64\native\sni.dll
+C:\Users\andre\Documents\Учеба\Диплом\PPC_HR\PPC_HR\bin\Release\netcoreapp3.1\publish\runtimes\win-x64\native\sni.dll
+C:\Users\andre\Documents\Учеба\Диплом\PPC_HR\PPC_HR\bin\Release\netcoreapp3.1\publish\runtimes\win-x86\native\sni.dll
+C:\Users\andre\Documents\Учеба\Диплом\PPC_HR\PPC_HR\bin\Release\netcoreapp3.1\publish\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\andre\Documents\Учеба\Диплом\PPC_HR\PPC_HR\bin\Release\netcoreapp3.1\publish\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll

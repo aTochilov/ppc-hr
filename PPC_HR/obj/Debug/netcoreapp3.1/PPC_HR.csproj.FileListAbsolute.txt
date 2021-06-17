@@ -1,4 +1,3 @@
-C:\Users\andre\Documents\Учеба\Диплом\PPC_HR\PPC_HR\obj\Debug\netcoreapp3.1\PPC_HR.csprojAssemblyReference.cache
 C:\Users\andre\Documents\Учеба\Диплом\PPC_HR\PPC_HR\obj\Debug\netcoreapp3.1\Interop.Microsoft.Office.Interop.Word.dll
 C:\Users\andre\Documents\Учеба\Диплом\PPC_HR\PPC_HR\obj\Debug\netcoreapp3.1\PPC_HR.csproj.ResolveComReference.cache
 C:\Users\andre\Documents\Учеба\Диплом\PPC_HR\PPC_HR\obj\Debug\netcoreapp3.1\Authorization.g.cs
@@ -39,3 +38,8 @@ C:\Users\andre\Documents\Учеба\Диплом\PPC_HR\PPC_HR\obj\Debug\netcore
 C:\Users\andre\Documents\Учеба\Диплом\PPC_HR\PPC_HR\obj\Debug\netcoreapp3.1\PPC_HR.dll
 C:\Users\andre\Documents\Учеба\Диплом\PPC_HR\PPC_HR\obj\Debug\netcoreapp3.1\PPC_HR.pdb
 C:\Users\andre\Documents\Учеба\Диплом\PPC_HR\PPC_HR\obj\Debug\netcoreapp3.1\PPC_HR.genruntimeconfig.cache
+C:\Users\andre\Documents\Учеба\Диплом\PPC_HR\PPC_HR\obj\Debug\netcoreapp3.1\Views\MilReportEmployeesView.g.cs
+C:\Users\andre\Documents\Учеба\Диплом\PPC_HR\PPC_HR\obj\Debug\netcoreapp3.1\Views\MilReportEmployeesView.baml
+C:\Users\andre\Documents\Учеба\Диплом\PPC_HR\PPC_HR\obj\Debug\netcoreapp3.1\PPC_HR.csproj.AssemblyReference.cache
+C:\Users\andre\Documents\Учеба\Диплом\PPC_HR\PPC_HR\obj\Debug\netcoreapp3.1\Views\OrderView.g.cs
+C:\Users\andre\Documents\Учеба\Диплом\PPC_HR\PPC_HR\obj\Debug\netcoreapp3.1\Views\OrderView.baml

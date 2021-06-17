@@ -1,16 +1,14 @@
-﻿using PPC_HR.DataAccess;
+﻿
 using PPC_HR.Models;
 using PPC_HR.Views;
 using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 namespace PPC_HR.Controllers
 {
     public interface IDisabledEmployeeReportController
     {
         DisabledEmployeesReportView LoadDisabledEmployeeReport();
-        void update(DisabledEmployeeReport disabledEmployeeReport);
     }
 
     public class DisabledEmployeeReportController : IDisabledEmployeeReportController
@@ -29,9 +27,5 @@ namespace PPC_HR.Controllers
             return reportView;
         }
 
-        public void update(DisabledEmployeeReport disabledEmployeeReport)
-        {
-            _model.UpdateReportDisabledEmployees(disabledEmployeeReport);
-        }
     }
 }

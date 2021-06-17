@@ -5,50 +5,325 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PPC_HR.Views"
         mc:Ignorable="d"
-        Title="PersonInfo" Height="775" Width="550" FontFamily="SegoeUI" FontSize="20">
+        Title="PersonInfo" Height="850" MinHeight="850" Width="1000" MinWidth="1000" FontFamily="SegoeUI" FontSize="20">
     <Grid Background="#FFC8ECFD">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="70"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="70"/>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="70"/>
-            <RowDefinition Height="65"/>
-            <RowDefinition Height="65"/>
-            <RowDefinition Height="65"/>
-            <RowDefinition Height="65"/>
-            <RowDefinition Height="65"/>
-            <RowDefinition Height="65"/>
-            <RowDefinition Height="65"/>
-            <RowDefinition Height="65"/>
-        </Grid.RowDefinitions>
-        <Image Grid.Column="0" Grid.Row="0" Grid.RowSpan="3"  Source="/person.png" Margin="50,15,50,5">
-        </Image>
-        <Label Content="LastName" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" Height="34" Margin="0,0,0,0"  VerticalAlignment="Bottom" Width="204"/>
-        <Label Content="FirstName" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" Height="34" Margin="0,0,0,0"  VerticalAlignment="Bottom" Width="204"/>
-        <Label Content="MidName" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" Height="34" Margin="0,0,0,0"  VerticalAlignment="Center" Width="204"/>
-        <Label Content="Телефон:" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Right" Height="34" Margin="0,0,0,0"  VerticalAlignment="Bottom"/>
-        <Label Content="Адреса:" Grid.Column="0" Grid.Row="4" HorizontalAlignment="Right" Height="34" Margin="0,0,0,0"  VerticalAlignment="Bottom" Width="80"/>
-        <Label Content="Дата народження:" Grid.Column="0" Grid.Row="5" HorizontalAlignment="Right" Height="34" Margin="0,0,0,0"  VerticalAlignment="Bottom"/>
-        <Label Content="Циклова комісія:" Grid.Column="0" Grid.Row="6" HorizontalAlignment="Right" Height="34" Margin="0,0,0,0"  VerticalAlignment="Bottom"/>
-        <Label Content="Посада:" Grid.Column="0" Grid.Row="7" HorizontalAlignment="Right" Height="34" Margin="0,0,0,0"  VerticalAlignment="Bottom" Width="82"/>
-        <Label Content="Пед. навантаження:" Grid.Column="0" Grid.Row="8" HorizontalAlignment="Right" Height="34" Margin="0,0,0,0"  VerticalAlignment="Bottom" Width="191"/>
-        <Label Content="Військовозобов'язаний:" Grid.Column="0" Grid.Row="9" HorizontalAlignment="Right" Height="34" Margin="0,0,5,0"  VerticalAlignment="Bottom" Width="228"/>
-        <Label Content="Пенсонер:" Grid.Column="0" Grid.Row="10" HorizontalAlignment="Right" Height="34" Margin="0,0,0,0"  VerticalAlignment="Bottom" Width="106"/>
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="70"/>
+            </Grid.RowDefinitions>
+            <Button Grid.Row="0" Style="{DynamicResource SquareButton}" x:Name="MainInfo" Click="mainInfo_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Views/home.png" Stretch="Uniform"/>
+                </Button.Background>
+            </Button>
+            <Button Grid.Row="1" Style="{DynamicResource SquareButton}" Click="position_Click">
+                <Button.Background>
+                    <ImageBrush Stretch="Uniform" ImageSource="/Views/briefcase_cutted.png"/>
+                </Button.Background>
+            </Button>
+            <Button Grid.Row="2" Style="{DynamicResource SquareButton}" Click="education_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Views/graduation-cap.png"/>
+                </Button.Background>
+            </Button>
+            <Button Grid.Row="3" Style="{DynamicResource SquareButton}" Click="milButton_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Views/military.png"/>
+                </Button.Background>
+            </Button>
+            <Button Grid.Row="4" Style="{DynamicResource SquareButton}" Click="disabButton_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Views/wheelchair-disabled.png" Stretch="Uniform"/>
+                </Button.Background>
+            </Button>
+            <Button Grid.Row="5" Style="{DynamicResource SquareButton}" Click="MentalCheck_click">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Views/mental-health.png" Stretch="Uniform"/>
+                </Button.Background>
+            </Button>
+            <!--<Button Grid.Row="6" Style="{DynamicResource SquareButton}">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Views/vacation.png" Stretch="Uniform"/>
+                </Button.Background>
+            </Button>
+            <Button Grid.Row="7" Style="{DynamicResource SquareButton}">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Views/sickleave.png" Stretch="Uniform"/>
+                </Button.Background>
+            </Button>-->
+        </Grid>
+        <Grid x:Name="Container" Grid.Row="0" Grid.Column="1" >
+            <StackPanel x:Name="PanelPersonInfo" Visibility="Visible" IsEnabled="False" >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="250*"/>
+                        <ColumnDefinition Width="250*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="65"/>
+                        <RowDefinition Height="65"/>
+                        <RowDefinition Height="90"/>
 
-        <Label Content="+380110001100" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" Height="34" Margin="0,0,0,0"  VerticalAlignment="Bottom" Width="204"/>
-        <Label Content="Адреса" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Left" Height="34" Margin="0,0,0,0"  VerticalAlignment="Bottom" Width="204"/>
-        <DatePicker Grid.Column="1" Grid.Row="5" HorizontalAlignment="Left" Height="34" Margin="0,0,0,0"  VerticalAlignment="Bottom" Width="204"/>
-        <ComboBox SelectedValue="Циклова комісія" Grid.Column="1" Grid.Row="6" HorizontalAlignment="Left" Height="34" Margin="0,0,0,0"  VerticalAlignment="Bottom" Width="204"/>
-        <Label Content="Посада" Grid.Column="1" Grid.Row="7" HorizontalAlignment="Left" Height="34" Margin="0,0,5,0"  VerticalAlignment="Bottom" Width="199"/>
-        <CheckBox Grid.Column="1" Grid.Row="8" HorizontalAlignment="Left" Height="16"  VerticalAlignment="Bottom" Width="199" Margin="0,0,0,10"/>
-        <CheckBox Grid.Column="1" Grid.Row="9" HorizontalAlignment="Left" Height="17"  VerticalAlignment="Bottom" Width="199" Margin="0,0,0,9"/>
-        <CheckBox Grid.Column="1" Grid.Row="10" HorizontalAlignment="Left" Height="26"  VerticalAlignment="Top" Width="199" Margin="0,25,0,0"/>
-        <Path Grid.ColumnSpan="2" Data="M40,192.04 L509.06823,192.04" Fill="#FF10576F" HorizontalAlignment="Center" Height="5" Margin="0,0,0,0" Grid.Row="3" Stretch="Fill" StrokeThickness="5" Stroke="#FF10576F" VerticalAlignment="Top" Width="450"/>
-        <Path Grid.ColumnSpan="2" Data="M40,192.04 L509.06823,192.04" Fill="#FF10576F" HorizontalAlignment="Left" Height="5" Margin="46,2,0,0" Grid.Row="6" Stretch="Fill" StrokeThickness="5" Stroke="#FF10576F" VerticalAlignment="Top" Width="450"/>
-        <Path Grid.ColumnSpan="2" Data="M40,192.04 L509.06823,192.04" Fill="#FF10576F" HorizontalAlignment="Left" Height="5" Margin="57,0,0,0" Grid.Row="9" Stretch="Fill" StrokeThickness="5" Stroke="#FF10576F" VerticalAlignment="Top" Width="450"/>
+                        <RowDefinition Height="65"/>
+                        <RowDefinition Height="65"/>
+                        <RowDefinition Height="65"/>
+                        <RowDefinition Height="65"/>
+                        <RowDefinition Height="65"/>
+                        <RowDefinition Height="65"/>
+                    </Grid.RowDefinitions>
+                    <Button x:Name="DeleteEmployee"  Grid.Row="11" Grid.Column="0" Style="{DynamicResource RoundedButtonTemplate}" Content="Видалити" Click="DeleteEmployee_Click" Foreground="#FFB40808" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="-40,0,0,0" />
+                    <Button Grid.Column="0" Grid.Row="2" x:Name="ButtonAddPhoto" Style="{DynamicResource CircleButton}" HorizontalAlignment="Right" Margin="0,0,110,10" VerticalAlignment="Bottom" Width="35" Height="35" Click="LoadPhotoClick" >
+                        <Button.Background>
+                            <ImageBrush ImageSource="/Views/addIcon.png" Stretch="Uniform"/>
+                        </Button.Background>
+                    </Button>
 
+                    <Image x:Name="PhotoViewer" Grid.Column="0" Grid.Row="0" Grid.RowSpan="3"  Source="/person.png" Margin="50,15,50,5" Width="150">
+                    </Image>
+                    <TextBox  x:Name="LastName" Grid.Column="1" Grid.Row="0" Height="32" Margin="0,37,0,0"  VerticalAlignment="Top" Width="277" FontSize="24" HorizontalAlignment="Left"/>
+                    <TextBox  x:Name="FirstName" Grid.Column="1" Grid.Row="1" Height="32" Margin="0,16,0,0"  VerticalAlignment="Top" Width="277" FontSize="24" HorizontalAlignment="Left"/>
+                    <TextBox x:Name="MidName" Grid.Column="1" Grid.Row="2" Height="32"  VerticalAlignment="Center" Width="277" FontSize="24" HorizontalAlignment="Left"/>
+                    <Label Content="Ідентифікаційний номер:" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Right" Height="34" Margin="0,0,0,0"  VerticalAlignment="Center"/>
+                    <Label Content="Телефон:" Grid.Column="0" Grid.Row="4" HorizontalAlignment="Right" Height="34" Margin="0,0,0,0"  VerticalAlignment="Center"/>
+                    <Label Content="Адреса:" Grid.Column="0" Grid.Row="5" HorizontalAlignment="Right" Height="34" Margin="0,0,0,0"  VerticalAlignment="Top" Width="80"/>
+                    <Label Content="Дата народження:" Grid.Column="0" Grid.Row="6" HorizontalAlignment="Right" Height="34" Margin="0,0,0,0"  VerticalAlignment="Bottom"/>
+                    <Label Content="Циклова комісія:" Grid.Column="0" Grid.Row="7" HorizontalAlignment="Right" Height="34" Margin="0,0,0,0"  VerticalAlignment="Bottom"/>
+                    <Label Content="Посада:" Grid.Column="0" Grid.Row="8" HorizontalAlignment="Right" Height="34" Margin="0,0,0,0"  VerticalAlignment="Bottom" Width="82"/>
+                    <Label Content="Пед. навантаження:" Grid.Column="0" Grid.Row="9" HorizontalAlignment="Right" Height="34" Margin="0,0,0,0"  VerticalAlignment="Bottom" Width="191"/>
+                    <Label Content="Військовозобов'язаний:" Grid.Column="0" Grid.Row="10" HorizontalAlignment="Right" Height="34" Margin="0,0,5,0"  VerticalAlignment="Bottom" Width="228"/>
+                    <Label Content="Пенсіонер:" Grid.Column="0" Grid.Row="11" HorizontalAlignment="Right" Height="34" Margin="0,0,0,0"  VerticalAlignment="Bottom" Width="106"/>
+                    <TextBox  x:Name="iid" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" Height="34"  VerticalAlignment="Center" Width="277" FontSize="20" VerticalContentAlignment="Center"/>
+                    <TextBox  x:Name="Phone" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Left" Height="34"  VerticalAlignment="Center" Width="277" FontSize="20" VerticalContentAlignment="Center"/>
+                    <TextBox x:Name="Address" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Left" Height="90" TextWrapping="Wrap" VerticalAlignment="Center" Width="277" FontSize="20"/>
+                    <DatePicker x:Name="BirthDate" Grid.Column="1" Grid.Row="6" HorizontalAlignment="Left" Height="34" Margin="0,0,0,0"  VerticalAlignment="Bottom" Width="277" />
+                    <TextBox x:Name="CyclKomis" Grid.Column="1" Grid.Row="7" HorizontalAlignment="Left" Height="34" Margin="0,0,0,0 " FontSize="20" VerticalAlignment="Bottom" Width="277"/>
+                    <TextBlock x:Name="Position"  Grid.Column="1" Grid.Row="8" HorizontalAlignment="Left" Height="34"  VerticalAlignment="Bottom" Width="277" FontSize="20" />
+                    <CheckBox x:Name="pedWork" Grid.Column="1" Grid.Row="9" HorizontalAlignment="Left" Height="24"  VerticalAlignment="Bottom" Width="99" Margin="0,0,0,4" VerticalContentAlignment="Center"/>
+                    <CheckBox x:Name="milLiable" Grid.Column="1" Grid.Row="10" HorizontalAlignment="Left" Height="24"  VerticalAlignment="Bottom" Width="139" Margin="0,0,0,4" VerticalContentAlignment="Center"/>
+                    <CheckBox x:Name="isRetired" Grid.Column="1" Grid.Row="11" HorizontalAlignment="Left" Height="24"  VerticalAlignment="Top" Width="199" Margin="0,37,0,0" VerticalContentAlignment="Center"/>
+                    <Path Grid.Column="0" Grid.ColumnSpan="2" Data="M40,192.04 L509.06823,192.04" Fill="#FF10576F" HorizontalAlignment="Center" Height="5" Margin="0,0,0,0" Grid.Row="3" Stretch="Fill" StrokeThickness="5" Stroke="#FF10576F" VerticalAlignment="Top" Width="450"/>
+                    <Path Grid.Column="0" Grid.ColumnSpan="2" Data="M40,192.04 L509.06823,192.04" Fill="#FF10576F" HorizontalAlignment="Center" Height="5" Margin="0,2,0,0" Grid.Row="6" Stretch="Fill" StrokeThickness="5" Stroke="#FF10576F" VerticalAlignment="Top" Width="450"/>
+                    <Path Grid.Column="0" Grid.ColumnSpan="2" Data="M40,192.04 L509.06823,192.04" Fill="#FF10576F" HorizontalAlignment="Center" Height="5" Margin="0,0,0,0" Grid.Row="9" Stretch="Fill" StrokeThickness="5" Stroke="#FF10576F" VerticalAlignment="Top" Width="450"/>
+
+                    <Button Grid.Column="1" Grid.Row="11" Style="{DynamicResource CircleButton}" HorizontalAlignment="Right" Margin="2,2,20,2" Click="SaveMainInfo_Click" >
+                        <Button.Background>
+                            <ImageBrush ImageSource="/Views/save-icon.png" Stretch="Uniform"/>
+                        </Button.Background>
+                    </Button>
+                    <TextBox x:Name="sex" Grid.Column="1" Grid.Row="9" Height="35" Width="36" Margin="0,26,107,0"  VerticalAlignment="Top" FontSize="24" MaxLength="1" HorizontalAlignment="Right"/>
+                    <Label Content="Стать:" Grid.Column="1" Grid.Row="9" HorizontalAlignment="Right" Height="34"  VerticalAlignment="Bottom" Margin="0,0,163,0"/>
+                </Grid>
+            </StackPanel>
+            <StackPanel x:Name="PanelPositions" Visibility="Collapsed"  IsEnabled="False" >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="290*"/>
+                        <ColumnDefinition Width="290*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="70"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Column="0" Grid.Row="0" Text="Основна посада" FontSize="24" Margin="20,20,0,0" FontWeight="Medium" HorizontalAlignment="Left" />
+                    <TextBlock Grid.Column="0" Grid.Row="0" Text="Код:" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="20,0,0,0" FontSize="20"/>
+                    <TextBlock Grid.Column="0" Grid.Row="1" Text="Посада:" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="20,0,0,0" FontSize="20"/>
+                    <TextBlock Grid.Column="0" Grid.Row="2" Text="Ставка:" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="20,0,0,0" FontSize="20"/>
+
+                    <TextBlock x:Name="position" Grid.Column="1" Grid.Row="1" TextWrapping="Wrap" Margin="20,0,0,0" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                    <ComboBox x:Name="code" Grid.Column="1" Text="Код" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20,0,0,0" Width="200" DisplayMemberPath="{Binding positionCode}" SelectionChanged="code_SelectionChanged" />
+                    <TextBlock x:Name="volume" Grid.Column="1" Grid.Row="2" Text="" Margin="20,0,50,0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                    <TextBlock Grid.Column="0" Grid.Row="3" Text="Усі посади" Margin="20,0,0,0" VerticalAlignment="Center" FontSize="24" FontWeight="Medium"/>
+                    <DataGrid Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="4" x:Name="PersonPositions" AutoGenerateColumns="False" Margin="40,0,40,0" ColumnWidth="SizeToHeader" >
+                        <DataGrid.Resources>
+                            <Style x:Key="wordWrapStyle" TargetType="{x:Type TextBlock}">
+                                <Setter Property="TextWrapping" Value="Wrap"/>
+                                <Setter Property="FontFamily" Value="Segoe UI"/>
+                                <Setter Property="FontSize" Value="20"/>
+                            </Style>
+                        </DataGrid.Resources>
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding positionCode}" Header="Код КП" MinWidth="100"/>
+                            <DataGridTextColumn Binding="{Binding positionName}" Header="Назва посади" Width="*" />
+                            <DataGridTextColumn Binding="{Binding positionVolume}" Header="Ставка" MinWidth="70"/>
+                        </DataGrid.Columns>
+                        <DataGridColumnHeader Style="{DynamicResource datagridHeaderTemplate}"/>
+                    </DataGrid>
+                    <TextBlock Grid.Column="0" Grid.Row="5" Text="Загальний стаж:" Margin="20" HorizontalAlignment="Right"/>
+                    <TextBlock Grid.Column="0" Grid.Row="6" Text="Cтаж за спеціальністю:" Margin="20" HorizontalAlignment="Right"/>
+                    <TextBlock Grid.Column="0" Grid.Row="7" Text="Стаж на посаді:" Margin="20" HorizontalAlignment="Right"/>
+                    <TextBlock Grid.Column="0" Grid.Row="8" Text="Дата останніх змін:" Margin="20" HorizontalAlignment="Right"/>
+
+                    <TextBox Grid.Column="1" Grid.Row="5" x:Name="totalExp" Margin="20,20,40,20" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" FontSize="20" />
+                    <TextBox Grid.Column="1" Grid.Row="6" x:Name="specExp" Margin="20,20,40,20" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" FontSize="20"/>
+                    <TextBox Grid.Column="1" Grid.Row="7" x:Name="positionExp" Margin="20,20,40,20" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" FontSize="20"/>
+                    <DatePicker Grid.Column="1" Grid.Row="8" x:Name="lastChanges"  Margin="20,20,40,20"  HorizontalAlignment="Stretch" VerticalContentAlignment="Center" FontSize="20"/>
+
+                    <Button Grid.Column="1" Grid.Row="9" Style="{DynamicResource CircleButton}" HorizontalAlignment="Right" Margin="2,2,20,2" Click="SavePositions_Click" >
+                        <Button.Background>
+                            <ImageBrush ImageSource="/Views/save-icon.png" Stretch="Uniform"/>
+                        </Button.Background>
+                    </Button>
+                </Grid>
+            </StackPanel>
+            <StackPanel x:Name="PanelEducation" Visibility="Collapsed"  Grid.Column="1" Grid.ColumnSpan="2" IsEnabled="False" >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="70"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Column="0" Grid.Row="0" Text="Освіта" Margin="20" FontWeight="Medium"/>
+                    <DataGrid Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" x:Name="GridEducation" AutoGenerateColumns="False" CanUserAddRows="True" Margin="40,0,40,0" ColumnWidth="SizeToHeader" >
+                        <DataGridColumnHeader/>
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding diplomaSeries}" Header="Серія" MinWidth="80" />
+                            <DataGridTextColumn Binding="{Binding diplomaSerialNumber}" Header="Номер" Width="100" />
+                            <DataGridTextColumn Binding="{Binding educationalLevel}" Header="Навчальний рівень" Width="120*"  />
+                            <DataGridTextColumn Binding="{Binding branch}" Header="Галузь" Width="120*"/>
+                            <DataGridTextColumn Binding="{Binding issueDate}" Header="Дата видачі" Width="100" />
+                            <DataGridTextColumn Binding="{Binding institution}" Header="Навчальний заклад" Width="120*" />
+                            <DataGridCheckBoxColumn Binding="{Binding pedEducation}" Header="Пед.освіта" Width="55"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button Grid.Column="1" Grid.Row="3" Style="{DynamicResource CircleButton}" HorizontalAlignment="Right" Margin="2,2,20,2" Click="EducationSave_Click" >
+                        <Button.Background>
+                            <ImageBrush ImageSource="/Views/save-icon.png" Stretch="Uniform"/>
+                        </Button.Background>
+                    </Button>
+                </Grid>
+            </StackPanel>
+            <StackPanel x:Name="PanelMilitary" Visibility="Collapsed" Margin="20" IsEnabled="False" >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200*"/>
+                        <ColumnDefinition Width="290*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Column="0" Grid.Row="0" Text="Військовий облік" Margin="20" FontWeight="Medium"/>
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Серія/Номер" Margin="20,20,225,0"/>
+                    <TextBox Grid.Row="1" Grid.Column="0" x:Name="milSeries" FontSize="20" Margin="170,0,0,0" Width="183" Height="34" VerticalAlignment="Center" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
+                    <TextBox Grid.Row="1" Grid.Column="1" x:Name="milNumber" Width="300" Height="35" VerticalAlignment="Center" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" HorizontalAlignment="Left" FontSize="20"/>
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="Звання" Margin="20,20,20,0" HorizontalAlignment="Left"/>
+                    <TextBox Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" x:Name="milRank" Width="400" Height="35" Margin="110,0,20,0" HorizontalAlignment="Left" VerticalContentAlignment="Center" FontSize="20"/>
+                    <TextBlock Grid.Row="3" Grid.Column="0" Text="Військкомат" Margin="20,20,20,0" HorizontalAlignment="Left"/>
+                    <TextBox Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" x:Name="milDept" Width="350" Height="35" Margin="160,18,0,17" HorizontalAlignment="Left" FontSize="20" VerticalContentAlignment="Center"/>
+
+                    <Button Grid.Column="1" Grid.Row="9" Style="{DynamicResource CircleButton}" HorizontalAlignment="Right" Margin="2,2,20,2" Click="MilSave_Click" >
+                        <Button.Background>
+                            <ImageBrush ImageSource="/Views/save-icon.png" Stretch="Uniform"/>
+                        </Button.Background>
+                    </Button>
+                </Grid>
+            </StackPanel>
+            <StackPanel x:Name="PanelDisability" Visibility="Collapsed" Margin="20" IsEnabled="False" >
+                <Grid >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Column="0" Grid.Row="0" Text="Інвалідність" Margin="20" FontWeight="Medium"/>
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Серія/Номер" Margin="20,20,225,0"/>
+                    <TextBox Grid.Row="1" Grid.Column="0" x:Name="disabSeries" FontSize="20" Margin="0,0,20,0" Width="183" Height="34" VerticalAlignment="Center" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" HorizontalAlignment="Right"/>
+                    <TextBox Grid.Row="1" Grid.Column="1" x:Name="disabNumber" FontSize="20" Width="300" Height="34" VerticalAlignment="Center" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="Дата видачі довідки " Margin="20,20,20,0" HorizontalAlignment="Right"/>
+                    <DatePicker Grid.Row="2" Grid.Column="1" x:Name="msecDateFrom" Width="300" Height="34" HorizontalAlignment="Left" FirstDayOfWeek="Monday"/>
+                    <TextBlock Grid.Row="3" Grid.Column="0" Text="Видано" Margin="20,20,20,0" HorizontalAlignment="Right"/>
+                    <ComboBox Grid.Row="3" Grid.Column="1"  x:Name="timeIssued" Width="300" Height="34" HorizontalAlignment="Left" />
+                    <TextBlock Grid.Row="4" Grid.Column="0" Text="Інвалідність з" Margin="20,20,20,0" HorizontalAlignment="Right"/>
+                    <DatePicker Grid.Row="4" Grid.Column="1" x:Name="DisabilityDateFrom" Width="300" Height="34" HorizontalAlignment="Left" FirstDayOfWeek="Monday"/>
+                    <TextBlock Grid.Row="5" Grid.Column="0" Text="Інвалідність по" Margin="20,20,20,0" HorizontalAlignment="Right"/>
+                    <DatePicker Grid.Row="5" Grid.Column="1" x:Name="DisabilityDateTo" Width="300" Height="34" HorizontalAlignment="Left" FirstDayOfWeek="Monday"/>
+                    <TextBlock Grid.Row="6" Grid.Column="0" Text="Група інвалідності" Margin="20,20,20,0" HorizontalAlignment="Right"/>
+                    <ComboBox Grid.Row="6" Grid.Column="1" x:Name="disabilityGroup"  Width="300" Height="34" HorizontalAlignment="Left" />
+                    <TextBlock Grid.Row="6" Grid.Column="0" Text="Група інвалідності" Margin="20,20,20,0" HorizontalAlignment="Right"/>
+                    <TextBlock Grid.Row="7" Grid.Column="0" Text="Причина інвалідності" Margin="20,20,20,0" HorizontalAlignment="Right"/>
+                    <TextBox Grid.Row="7" Grid.Column="1" x:Name="reason" FontSize="20" Width="300" Height="34" HorizontalAlignment="Left"/>
+                    <Button Grid.Row="8" Grid.Column="1" Style="{DynamicResource RoundedButtonTemplate}" Content="Відкрити скан" />
+                    <Button Grid.Row="9" Grid.Column="0" Style="{DynamicResource RoundedButtonTemplate}" Content="Додати файл" Click="uploadFileDisability_Click" Width="150" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Padding="14,1,1,1"/>
+                    <Label Grid.Row="9" Grid.Column="0" Width="213" Height="50" HorizontalAlignment="Left" Margin="150,10,5,10" x:Name="DisabilityFile" VerticalContentAlignment="Center" FontSize="20"/>
+
+                    <Button Grid.Column="1" Grid.Row="9" Style="{DynamicResource CircleButton}" HorizontalAlignment="Right" Margin="2,2,20,2" Click="SaveDisability_Click" >
+                        <Button.Background>
+                            <ImageBrush ImageSource="/Views/save-icon.png" Stretch="Uniform"/>
+                        </Button.Background>
+                    </Button>
+                </Grid>
+            </StackPanel>
+            <StackPanel x:Name="PanelMentalCheck" Visibility="Collapsed" Margin="20" IsEnabled="False"  >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200*"/>
+                        <ColumnDefinition Width="290*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Column="0" Grid.Row="0" Text="Довідка про психічний стан" Margin="20" FontWeight="Medium"/>
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Серія/Номер" Margin="20,20,225,0"/>
+                    <TextBox Grid.Row="1" Grid.Column="0" FontSize="20" x:Name="mentalCheckSeries" Margin="170,0,0,0" Width="183" Height="34" VerticalAlignment="Center" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
+                    <TextBox Grid.Row="1" Grid.Column="1" FontSize="20" x:Name="mentalCheckNumber" Width="300" Height="35" VerticalAlignment="Center" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="Дійсна до:" Margin="20,20,20,0" HorizontalAlignment="Left"/>
+                    <DatePicker Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" FontSize="20" x:Name="mentalCheckDateTo" Width="400" Height="35" Margin="130,18,0,18" HorizontalAlignment="Left" VerticalContentAlignment="Center" FirstDayOfWeek="Monday"/>
+
+                    <Button Grid.Row="8" Grid.Column="1" Style="{DynamicResource RoundedButtonTemplate}" Content="Відкрити скан" HorizontalAlignment="Left" Margin="17,0,0,0"/>
+                    <Button Grid.Row="9" Grid.Column="0" Style="{DynamicResource RoundedButtonTemplate}" Content="Додати файл" Click="uploadFile_Click" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Padding="14,1,1,1"/>
+                    <Label Grid.Row="4" Grid.Column="0" Width="101" Height="50" HorizontalAlignment="Left" Margin="262,10,0,10" x:Name="FileMentalCheck" VerticalContentAlignment="Center"/>
+                    <Button Grid.Column="1" Grid.Row="9" Style="{DynamicResource CircleButton}"  HorizontalAlignment="Right" Margin="2,2,20,2" Click="MentalCheckSave_Click" >
+                        <Button.Background>
+                            <ImageBrush ImageSource="/Views/save-icon.png" Stretch="Uniform"/>
+                        </Button.Background>
+                    </Button>
+                </Grid>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Window>

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "5MzhQvfLo0L+hIWlVM1UN7L4pwhIfB4DvlPrxUDndrBaF0cQiHdtA2RL5KcmtoJ5mhefDgutAPc2Idc0imok2g==",
+  "dgSpecHash": "zHnobVV0oHNVP3xoplcbrLVKo6dQiHKiFVSEBqAjgTdTwq+CcdDxYZxn7wtvTsxQB1nFIlyZyoUu5SR/dXkIwg==",
   "success": true,
   "projectFilePath": "C:\\Users\\andre\\Documents\\Учеба\\Диплом\\PPC_HR\\PPC_HR\\PPC_HR.csproj",
   "expectedPackageFiles": [
@@ -14,8 +14,7 @@
     "C:\\Users\\andre\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512",
     "C:\\Users\\andre\\.nuget\\packages\\system.data.sqlclient\\4.8.2\\system.data.sqlclient.4.8.2.nupkg.sha512",
     "C:\\Users\\andre\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
-    "C:\\Users\\andre\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
-    "C:\\Users\\andre\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.13\\microsoft.netcore.app.host.win-x64.3.1.13.nupkg.sha512"
+    "C:\\Users\\andre\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512"
   ],
   "logs": []
 }

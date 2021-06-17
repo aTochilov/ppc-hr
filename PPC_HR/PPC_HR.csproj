@@ -2,8 +2,9 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFrameworks>netcoreapp3.1</TargetFrameworks>
     <UseWPF>true</UseWPF>
+    <Platforms>AnyCPU;x64;x86</Platforms>
   </PropertyGroup>
 
   <ItemGroup>
@@ -11,6 +12,21 @@
     <None Remove="edit.png" />
     <None Remove="expand.png" />
     <None Remove="person.png" />
+    <None Remove="Views\addIcon.png" />
+    <None Remove="Views\briefcase.png" />
+    <None Remove="Views\briefcase_cutted.png" />
+    <None Remove="Views\clipart362214.png" />
+    <None Remove="Views\edit.png" />
+    <None Remove="Views\expand.png" />
+    <None Remove="Views\graduation-cap.png" />
+    <None Remove="Views\home.png" />
+    <None Remove="Views\mental-health.png" />
+    <None Remove="Views\military.png" />
+    <None Remove="Views\print.png" />
+    <None Remove="Views\save-icon.png" />
+    <None Remove="Views\sickleave.png" />
+    <None Remove="Views\vacation.png" />
+    <None Remove="Views\wheelchair-disabled.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -36,6 +52,21 @@
     <Resource Include="edit.png" />
     <Resource Include="expand.png" />
     <Resource Include="person.png" />
+    <Resource Include="Views\addIcon.png" />
+    <Resource Include="Views\briefcase.png" />
+    <Resource Include="Views\briefcase_cutted.png" />
+    <Resource Include="Views\clipart362214.png" />
+    <Resource Include="Views\edit.png" />
+    <Resource Include="Views\expand.png" />
+    <Resource Include="Views\graduation-cap.png" />
+    <Resource Include="Views\home.png" />
+    <Resource Include="Views\mental-health.png" />
+    <Resource Include="Views\military.png" />
+    <Resource Include="Views\print.png" />
+    <Resource Include="Views\save-icon.png" />
+    <Resource Include="Views\sickleave.png" />
+    <Resource Include="Views\vacation.png" />
+    <Resource Include="Views\wheelchair-disabled.png" />
   </ItemGroup>
 
 </Project>

@@ -1,17 +1,9 @@
 ﻿using PPC_HR.Controllers;
+
 using PPC_HR.Models;
-using PPC_HR.Views;
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+
 
 namespace PPC_HR.Views
 {
@@ -22,21 +14,22 @@ namespace PPC_HR.Views
     {
         private IPersonPreviewController _preview;
         private IDisabledEmployeeReportController _disabledEmployeeReport;
+        private IMilReportEmployeesController _milReportEmployees;
+        private OrdersController orders;
         public MainScreenView()
         {
             InitializeComponent();
-
+            _preview = new PersonPreviewController(new PersonPreviewModel());
+            foreach (PersonPreviewView preview in _preview.loadPreviews())
+                WorkspacePanel.Children.Add(preview);
+            AddPersonButton.Visibility = Visibility.Visible;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            PersonInfoView person = new PersonInfoView();
-            
-            person.Show();
-        }
 
         private void reportsButton_Click(object sender, RoutedEventArgs e)
         {
+            AddPersonButton.Visibility = Visibility.Collapsed;
+            WorkspacePanel.Children.Clear();
             if (ReportsCanvas.IsVisible) ReportsCanvas.Visibility = Visibility.Hidden;
             else ReportsCanvas.Visibility = Visibility.Visible;
 
@@ -44,26 +37,58 @@ namespace PPC_HR.Views
 
         private void employeesButton_Click(object sender, RoutedEventArgs e)
         {
+            WorkspacePanel.Children.Clear();
+            
             _preview = new PersonPreviewController(new PersonPreviewModel());
             foreach (PersonPreviewView preview in _preview.loadPreviews())
                 WorkspacePanel.Children.Add(preview);
+            AddPersonButton.Visibility = Visibility.Visible;
         }
 
         private void disabledEmplButton_Click(object sender, RoutedEventArgs e)
         {
+            WorkspacePanel.Children.Clear();
             _disabledEmployeeReport = new DisabledEmployeeReportController(new DisabledEmployeesReportModel());
             WorkspacePanel.Children.Add(_disabledEmployeeReport.LoadDisabledEmployeeReport());
         }
 
         private void militaryLiableButton_Click(object sender, RoutedEventArgs e)
         {
-
+            WorkspacePanel.Children.Clear();
+            _milReportEmployees = new MilReportEmployeesController(new MilReportEmployeesModel());
+            WorkspacePanel.Children.Add(_milReportEmployees.LoadMilReportEmployees());
         }
 
         private void searchButton_Click(object sender, RoutedEventArgs e)
         {
+            AddPersonButton.Visibility = Visibility.Collapsed;
+            WorkspacePanel.Children.Clear();
             if (searchPanel.IsVisible) searchPanel.Visibility = Visibility.Hidden;
             else searchPanel.Visibility = Visibility.Visible;
+        }
+
+        private void AddPersonButton_Click(object sender, RoutedEventArgs e)
+        {
+            PersonInfoView newPerson = new PersonInfoView();
+            newPerson.Show();
+        }
+
+        private void OrdersButton_Click(object sender, RoutedEventArgs e)
+        {
+            AddPersonButton.Visibility = Visibility.Collapsed;
+            WorkspacePanel.Children.Clear();
+            orders = new OrdersController();
+            WorkspacePanel.Children.Add( orders.LoadDisabledEmployeeReport());
+        }
+
+        private void search_click(object sender, RoutedEventArgs e)
+        {
+            WorkspacePanel.Children.Clear();
+
+            SearchController _search = new SearchController(SearchTB.Text.ToString());
+            foreach (PersonPreviewView preview in _search.loadPreviews())
+                WorkspacePanel.Children.Add(preview);
+            AddPersonButton.Visibility = Visibility.Visible;
         }
     }
 }

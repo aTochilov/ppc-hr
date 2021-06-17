@@ -21,9 +21,13 @@ namespace PPC_HR.Models
 
         public PersonPreviewModel()
         {
-            PersonPreviews = new DataService().GetPreviews();
+            PersonPreviews = new DataReceiveService().GetPreviews();
         }
 
+        public PersonPreviewModel(List<short> IdList)
+        {
+            PersonPreviews = new DataReceiveService().GetPreviews(IdList);
+        }
 
         private void RaisePreviewUpdated(PersonPreview personPreview)
         {

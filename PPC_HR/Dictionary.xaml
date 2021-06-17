@@ -51,7 +51,70 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+    <!--round button-->
+
+    <Style x:Key="CircleButton" TargetType="Button">
+        <Setter Property="Width" Value="50"/>
+        <Setter Property="Height" Value="50"/>
+        <Setter Property="Margin" Value="2"/>
+        <Setter Property="Background" Value="#FF6DB4EF"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Ellipse x:Name="backgr" Fill="#FF328DAA"/>
+                        <Ellipse Fill="{TemplateBinding Background}" Margin="4,4,4,4"/>
+                        <Ellipse x:Name="border" Stroke="#FF10576F" StrokeThickness="3"/>
+                        <ContentPresenter x:Name="content" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsDefaulted" Value="True">
+                            <Setter Property="Fill" TargetName="backgr" Value="#FF328DAA"/>
+                            <Setter Property="Stroke" TargetName="border" Value="#FF3C7FB1"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Fill" TargetName="backgr" Value="#FF64B8D4"/>
+                            <Setter Property="Stroke" TargetName="border" Value="#FF3C7FB1"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Fill" TargetName="backgr" Value="#FFC4E5F6"/>
+                            <Setter Property="Stroke" TargetName="border" Value="#FF2C628B"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
     
+    <!--square button-->
+    
+    <Style x:Key="SquareButton" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Rectangle x:Name="backgr" Fill="#FF10576F"/>
+                        <Rectangle Fill="{TemplateBinding Background}" Margin="10,10,10,10"/>
+                        <ContentPresenter x:Name="content" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsDefaulted" Value="True">
+                            <Setter Property="Fill" TargetName="backgr" Value="#FF328DAA"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Fill" TargetName="backgr" Value="#FF64B8D4"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Fill" TargetName="backgr" Value="#FFC4E5F6"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
     <!--search button-->
     
     <Style  x:Key="SearchButtonTemplate" TargetType="{x:Type Button}">
@@ -164,8 +227,11 @@
     <!--DataGridColumnHeader-->
 
     <Style TargetType="DataGridColumnHeader">
-        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontSize" Value="20"/>
         <Setter Property="FontFamily" Value="SegoeUI Light"/>
+        <Setter Property="BorderBrush" Value="#FF3C6F80"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Background" Value="#FF64B8D4"/>
         <Setter Property="ContentTemplate">
             <Setter.Value>
                 <DataTemplate>

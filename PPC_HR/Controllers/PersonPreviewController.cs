@@ -3,8 +3,7 @@ using PPC_HR.Models;
 using PPC_HR.Views;
 using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Windows.Controls;
+
 
 namespace PPC_HR.Controllers
 {

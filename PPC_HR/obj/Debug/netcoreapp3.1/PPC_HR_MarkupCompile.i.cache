@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
 C:\Users\andre\Documents\Учеба\Диплом\PPC_HR\PPC_HR\App.xaml
-6110169133
+8-1077359671
 
-17461702491
+34-1906431997
 1959148311
-Authorization.xaml;Dictionary.xaml;Views\DisabledEmployeesReportView.xaml;Views\MainScreenView.xaml;Views\PersonInfoView.xaml;Views\PersonPreviewView.xaml;
+Authorization.xaml;Dictionary.xaml;Views\DisabledEmployeesReportView.xaml;Views\MainScreenView.xaml;Views\MilReportEmployeesView.xaml;Views\OrderView.xaml;Views\PersonInfoView.xaml;Views\PersonPreviewView.xaml;
 
-True
+False
 

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>PPC_HR</id>
+    <version>1.0.0</version>
+    <authors>PPC_HR</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework=".NETCoreApp3.1">
+        <dependency id="System.Data.SqlClient" version="4.8.2" exclude="Build,Analyzers" />
+        <dependency id="linq2db" version="3.3.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <frameworkReferences>
+      <group targetFramework=".NETCoreApp3.1">
+        <frameworkReference name="Microsoft.WindowsDesktop.App.WPF" />
+      </group>
+    </frameworkReferences>
+  </metadata>
+  <files>
+    <file src="C:\Users\andre\Documents\Учеба\Диплом\PPC_HR\PPC_HR\bin\Debug\netcoreapp3.1\PPC_HR.runtimeconfig.json" target="lib\netcoreapp3.1\PPC_HR.runtimeconfig.json" />
+    <file src="C:\Users\andre\Documents\Учеба\Диплом\PPC_HR\PPC_HR\bin\Debug\netcoreapp3.1\PPC_HR.dll" target="lib\netcoreapp3.1\PPC_HR.dll" />
+  </files>
+</package>

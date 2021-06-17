@@ -44,31 +44,22 @@
                             <TextBlock Grid.Column="1" x:Name="Position" Style="{DynamicResource PersonPreviewTextBlock}"  Height="35"/>
                             <TextBlock Grid.Column="2" x:Name="Phone" Style="{DynamicResource PersonPreviewTextBlock}"  Height="35" HorizontalAlignment="Right"/>
                         </Grid>
-                        <Grid Grid.Column="2" Grid.Row="0" Grid.RowSpan="2" HorizontalAlignment="Right" VerticalAlignment="Center" Width="50" Margin="0,0,10,0">
-                            <Ellipse Stroke="#FF10576F" StrokeThickness="3" Height="50" Width="50" />
-                            <Ellipse  Width="40" Height="40" >
-
-                                <Ellipse.Fill>
-                                    <ImageBrush ImageSource="/edit.png" Stretch="Uniform"/>
-                                </Ellipse.Fill>
-                            </Ellipse>
-                        </Grid>
-                        <Grid Grid.Column="3" Grid.Row="0" Grid.RowSpan="2" HorizontalAlignment="Right" VerticalAlignment="Center" Width="50" Margin="0,0,10,0">
-                            <Ellipse Stroke="#FF10576F" StrokeThickness="3" Height="50" Width="50" />
-                            <Ellipse RenderTransformOrigin="0.5,0.5" Width="40" Height="40" Margin="9,5,1,5"  >
-                                <Ellipse.RenderTransform>
-                                    <TransformGroup>
-                                        <ScaleTransform ScaleX="-1"/>
-                                        <SkewTransform/>
-                                        <RotateTransform/>
-                                        <TranslateTransform/>
-                                    </TransformGroup>
-                                </Ellipse.RenderTransform>
-                                <Ellipse.Fill>
-                                    <ImageBrush ImageSource="/expand.png" Stretch="Uniform"/>
-                                </Ellipse.Fill>
-                            </Ellipse>
-                        </Grid>
+                        <Button Grid.Column="2" Grid.Row="0" Grid.RowSpan="2" HorizontalAlignment="Right" VerticalAlignment="Center" x:Name="EditButton"  Style="{DynamicResource CircleButton}" 
+                Margin="0,0,10,0" Click="EditablePersonInfo_Click">
+                            <Button.Background>
+                                <ImageBrush ImageSource="/edit.png" Stretch="Uniform"/>
+                            </Button.Background>
+                        </Button>
+                        <Button Grid.Column="3" Grid.Row="0" Grid.RowSpan="2" HorizontalAlignment="Right" VerticalAlignment="Center" x:Name="MoreButton"  Style="{DynamicResource CircleButton}" 
+                Margin="0,0,10,0" Click="MoreButton_Click" >
+                            <Button.Background>
+                                <ImageBrush ImageSource="/expand.png" Stretch="Uniform">
+                                    <ImageBrush.RelativeTransform>
+                                        <ScaleTransform ScaleX="-1" CenterX="0.55"/>
+                                    </ImageBrush.RelativeTransform>
+                                </ImageBrush>
+                            </Button.Background>
+                        </Button>
                     </Grid>
                 </StackPanel>
             </Grid>
